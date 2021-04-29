@@ -1,0 +1,31 @@
+<div class="main-heading">
+  Resources
+</div>
+<div class="story-body">
+  <div class="story-container">
+    {{#each stories}}
+    <div class="story-cell">
+      <div class="story-title">
+        <div id="bottom">
+          {{title}}
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="story-content">
+        {{stripTags (truncate body 150)}}
+      </div>
+      <div class="story-profile">
+        <div class="profile-img">
+          <img src="{{user.image}}" alt="">
+        </div>
+        <div class="profile-name">
+          <a href="/stories/user/{{user._id}}">{{user.displayName}}</a>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <p>No resources to display.</p>
+    {{/each}}
+
+  </div>
+</div>
