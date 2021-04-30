@@ -1,0 +1,82 @@
+{{!-- <nav class="grey darken-3">
+  <div class="nav-wrapper container">
+
+    <a href="#!" class="brand-logo center">StoryBooks</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="/stories">Public Stories</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav> --}}
+
+<div class="sidebars">
+  <div id="myPersistentSidebar" class="persistent-sidebar" onmouseover="openNav()" onmouseout="closeNav()">
+    <a id="resources-icon" href="/stories"><i class="material-icons">book</i></a>
+    <a id="dashboard-icon" href="/dashboard"><i class="material-icons">dashboard</i></a>
+    <a id="add-icon" href="/stories/add"><i class="material-icons">add</i></a>
+    <a id="logout-icon" href="/auth/logout"><i class="material-icons">power_settings_new</i></a>
+  </div>
+  <div id="mySidebar" class="sidebar" onmouseover="openNav()" onmouseout="closeNav()">
+    <a id="resources-text" href="/stories">Resources</a>
+    <a id="dashboard-text" href="/dashboard">Dashboard</a>
+    <a id="add-text" href="/stories/add">Add Info</a>
+    <a id="logout-text" href="/auth/logout">Logout</a>
+  </div>
+</div>
+
+<script>
+  if (window.location.pathname === "/stories") {
+    document.getElementById("resources-icon").style.color = "#4c75f2";
+    document.getElementById("dashboard-icon").style.color = "gray";
+    document.getElementById("add-icon").style.color = "gray";
+    document.getElementById("logout-icon").style.color = "gray";
+    document.getElementById("resources-text").style.color = "#4c75f2";
+    document.getElementById("dashboard-text").style.color = "gray";
+    document.getElementById("add-text").style.color = "gray";
+    document.getElementById("logout-text").style.color = "gray";
+  } else if (window.location.pathname === "/stories/add") {
+    document.getElementById("resources-icon").style.color = "gray";
+    document.getElementById("dashboard-icon").style.color = "gray";
+    document.getElementById("add-icon").style.color = "#4c75f2";
+    document.getElementById("logout-icon").style.color = "gray";
+    document.getElementById("resources-text").style.color = "gray";
+    document.getElementById("dashboard-text").style.color = "gray";
+    document.getElementById("add-text").style.color = "#4c75f2";
+    document.getElementById("logout-text").style.color = "gray";
+  } else if (window.location.pathname === "/dashboard") {
+    document.getElementById("resources-icon").style.color = "gray";
+    document.getElementById("dashboard-icon").style.color = "#4c75f2";
+    document.getElementById("add-icon").style.color = "gray";
+    document.getElementById("logout-icon").style.color = "gray";
+    document.getElementById("resources-text").style.color = "gray";
+    document.getElementById("dashboard-text").style.color = "#4c75f2";
+    document.getElementById("add-text").style.color = "gray";
+    document.getElementById("logout-text").style.color = "gray";
+  } else {
+    document.getElementById("resources-icon").style.color = "gray";
+    document.getElementById("dashboard-icon").style.color = "gray";
+    document.getElementById("add-icon").style.color = "gray";
+    document.getElementById("logout-icon").style.color = "gray";
+    document.getElementById("resources-text").style.color = "gray";
+    document.getElementById("dashboard-text").style.color = "gray";
+    document.getElementById("add-text").style.color = "gray";
+    document.getElementById("logout-text").style.color = "gray";
+
+  }
+
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("myPersistentSidebar").style.width = "0px";
+    document.getElementById("main").style.marginLeft = "250px";
+
+  }
+
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("myPersistentSidebar").style.width = "75px";
+    document.getElementById("main").style.marginLeft = "0";
+  }
+</script>

@@ -1,0 +1,26 @@
+<div class="main-heading">
+  Dashboard
+</div>
+<div class="main-heading">
+  <h5>Welcome {{name}}</h5>
+</div>
+{{#if stories}}
+<div class="secondary-heading">Here are resources for your region.</div>
+<div class="table">
+  <div class="table-header">
+    <div class="header-cell title-cell">Title</div>
+    <div class="header-cell date-cell">Date</div>
+    <div class="header-cell status-cell">Status</div>
+  </div>
+  {{#each stories}}
+  <div class="table-body">
+    <div class="body-cell title-cell">{{title}}</div>
+    <div class="body-cell date-cell">{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</div>
+    <div class="body-cell status-cell">{{status}}</div>
+  </div>
+{{/each}}
+</tbody>
+</div>
+{{else}}
+<p>You have not selected any region.</p>
+{{/if}}
